@@ -1,0 +1,15 @@
+# Step 1: Ignore everything
+*
+
+# Step 2: Unignore folders so Git can read inside them
+!*/
+
+# Step 3: Unignore all files that have a file extension
+!*.*
+
+# Step 4: Explicitly unignore specific extensionless files you want to keep
+!README
+!LICENSE
+
+# Step 5: Ignore .vscode
+.vscode
