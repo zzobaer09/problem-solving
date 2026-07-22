@@ -2,7 +2,6 @@
   https://codeforces.com/problemset/problem/22/A
 */
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -16,7 +15,7 @@ public class problem20 {
 		for(int i = 0; i<n; i++) {
 			arr[i] = sc.nextInt();
 		}
-		
+		sc.close();
 		Arrays.sort(arr);
 		boolean flag = true;
 		for(int i=0;i<n-1;i++) {
@@ -27,6 +26,7 @@ public class problem20 {
 			}
 		}
 		if(flag) System.out.println("NO");
+
 	}
 
 }
