@@ -9,7 +9,6 @@ typedef long double ld;
 
 using namespace std;
 
-
 int main(int argc, char const *argv[]){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -22,9 +21,8 @@ int main(int argc, char const *argv[]){
     while (n--)
     {
         string usr; cin>>usr;
-        
-        if(usrname[usr]>=1){
 
+        if(usrname[usr]>=1){
             string newusr = usr+ to_string(usrname[usr]);
             cout<<newusr<<endl;
             usrname[usr]++;
