@@ -23,7 +23,7 @@ int main(int argc, char const *argv[]){
     cin.tie(NULL);
 
 
-    vector<vector<int>> a(6,vector<int>(6));\
+    vector<vector<int>> a(6,vector<int>(6));
     vector<int> allSum;
     for(auto &i:a) for(auto &j:i) cin>>j;
 
