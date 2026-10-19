@@ -13,6 +13,12 @@ using namespace std;
 int main(int argc, char const *argv[]){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    ll a,b; cin>>a>>b;
-    cout<<a+b<<endl;
+
+    ll n,sum; cin>>n;
+    sum =0;
+    while(n--){
+        ll t; cin>>t;
+        sum+=t;
+    } 
+    cout<<sum<<endl;
 }
