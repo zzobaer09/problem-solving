@@ -9,27 +9,24 @@ typedef long double ld;
  
 using namespace std;
  
-
-vector<int> compareTriplets(vector<int> a,vector<int> b){
-    int ap,bp;
-    ap=0;bp=0;
-    for (int i = 0; i < 3; i++)
-    {
-        if(a[i]>b[i]) ap++;
-        else if(a[i]==b[i]) ;
-        else bp++;
-    }
-    return vector<int>{ap,bp};
-}
-
 int main(int argc, char const *argv[]){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    vector<int>a(3),b(3);
+    int n,dia1,dia2; cin>>n;
+    vector<vector<int>>matrix(n,vector<int>(n));
+    
+    for(auto &v:matrix){
+        for(auto &vv:v){
+            cin>>vv;
+        }
+    }
 
-    for(int &v:a) cin>>v;
-    for(int &v:b) cin>>v;
-    for(int v:compareTriplets(a,b)) cout<<v<<" ";
-    cout<<endl;
+    dia1=0;dia2=0;
+    for(int i=0;i<n;i++){
+        dia1+=matrix[i][i];
+        dia2+=matrix[i][n-i-1];
+    }
+    cout<<abs(dia1-dia2)<<endl;
+    return 0;
 }
