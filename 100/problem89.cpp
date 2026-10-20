@@ -15,11 +15,32 @@ int main(int argc, char const *argv[]){
     cin.tie(NULL);
     // #################
     
-    vector<ll> arr(5);
-    for(ll &v:arr) cin>>v;
-    sort(arr.begin(),arr.end());
-    ll max_sum = accumulate(arr.begin()+1, arr.end(),0LL);
-    ll min_sum = accumulate(arr.begin(),arr.end()-1,0LL);
+    string s; cin>>s;
 
-    cout<<min_sum<<" "<<max_sum<<endl;
+    stringstream ss(s);
+    vector<int> v;
+    int t;
+    char c;
+    while (ss>>t>>c){
+        v.push_back(t);
+    }
+    
+
+    if (c == 'A') {
+        if (v[0] == 12) v[0] = 0;
+    } else {
+        if (v[0] != 12) v[0] += 12;
+    }
+    s="";
+    int flag=0;
+    for(int a:v){
+        string d = to_string(a);
+        if(d.length()<2) d="0"+d;
+        s+=d;
+        flag++;
+        if(flag!=3) s+=":";
+    }
+    cout<<s<<endl;
+
+
 }
