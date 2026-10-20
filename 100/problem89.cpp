@@ -15,15 +15,11 @@ int main(int argc, char const *argv[]){
     cin.tie(NULL);
     // #################
     
-    int n; cin>>n;
+    vector<ll> arr(5);
+    for(ll &v:arr) cin>>v;
+    sort(arr.begin(),arr.end());
+    ll max_sum = accumulate(arr.begin()+1, arr.end(),0LL);
+    ll min_sum = accumulate(arr.begin(),arr.end()-1,0LL);
 
-    for(int i=0;i<n;i++){
-        for(int j=0;j<(n-i-1);j++){
-            cout << ' ';
-        }
-        for(int j=0;j<=i;j++){
-            cout << '#';
-        }
-        cout<<endl;
-    }
+    cout<<min_sum<<" "<<max_sum<<endl;
 }
