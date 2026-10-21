@@ -1,5 +1,5 @@
 /*
-    PROBLEM LINK
+    Pre-Bootcamp Contest
 */
  
 #include<bits/stdc++.h>
@@ -16,26 +16,14 @@ int main(int argc, char const *argv[]){
     cin.tie(NULL);
     // #################################
 
-    map<string,string> slogan;
+    int count=0;
+    int max_val=0;
+    string s; cin>>s;
 
-    int n,q; cin>>n;
-    string temp; getline(cin,temp);
-    string s1,s2;
-    while (n--)
-    {  
-        getline(cin,s1);
-        getline(cin,s2);
-        slogan[s1]=s2;
+    for(int i=0;i<s.length()-1;i++){
+        if(s[i]==s[i+1]) count++;
+        else count=0;
+        max_val = max(count,max_val);
     }
-    
-    cin>>q; getline(cin,temp);
-
-    while (q--)
-    {
-        getline(cin,s1);
-        s2 = slogan[s1];
-        cout<<s2<<endl;
-    }
-    
-
+    cout<<max_val+1<<endl;
 }
