@@ -1,5 +1,5 @@
 /*
-    Pre-Bootcamp Contest
+    https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1756
 */
  
 #include<bits/stdc++.h>
@@ -15,17 +15,22 @@ int main(int argc, char const *argv[]){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     // #################
-    int n;
-    map<int,int> frequency;
-    vector<int> list;
-    while (cin>>n)
-    {
-        if(frequency[n]==0) list.push_back(n);
-        frequency[n]++;
-    }
-    
 
-    for(int a:list){
-        cout<<a<<" "<<frequency[a]<<endl;
+    set<string> dictionary;
+
+    string s;
+    while (cin>>s)
+    {
+        for(char &c:s){
+            if(isalpha(c)) c = tolower(c);
+            else c = ' ';
+        }
+        stringstream ss(s);
+        while (ss>>s)
+        {
+            dictionary.insert(s);
+        }
+        
     }
+    for(string ss:dictionary) cout<<ss<<endl;
 }
