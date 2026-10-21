@@ -20,7 +20,7 @@ int main(int argc, char const *argv[]){
     vector<int> list;
     while (cin>>n)
     {
-        list.push_back(n);
+        if(frequency[n]==0) list.push_back(n);
         frequency[n]++;
     }
     
