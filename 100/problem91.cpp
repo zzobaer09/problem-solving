@@ -1,5 +1,5 @@
 /*
-    Pre-Bootcamp Contest
+    https://toph.co/p/fibonacci-numbers
 */
  
 #include<bits/stdc++.h>
@@ -8,7 +8,11 @@ typedef long long ll;
 typedef long double ld;
  
 using namespace std;
- 
+
+int fibo(ll n,ll f,ll s, ll i){
+    if(n==i) return s;
+    return fibo(n,s,s+f,++i);
+}
  
 int main(int argc, char const *argv[]){
     // #################################
@@ -16,14 +20,8 @@ int main(int argc, char const *argv[]){
     cin.tie(NULL);
     // #################################
 
-    int count=0;
-    int max_val=0;
-    string s; cin>>s;
+    ll n; cin>>n;
 
-    for(int i=0;i<s.length()-1;i++){
-        if(s[i]==s[i+1]) count++;
-        else count=0;
-        max_val = max(count,max_val);
-    }
-    cout<<max_val+1<<endl;
+    ll ans = fibo(n,1,1,2);
+    cout<<ans<<endl;
 }
